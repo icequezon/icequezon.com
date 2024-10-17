@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# icequezon.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my personal website.
 
 ## Available Scripts
 
