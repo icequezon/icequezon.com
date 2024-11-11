@@ -1,5 +1,5 @@
 body {
-    background-color: #5a3d88; /* A nice purple background */
+    background-color: #00735c; /* A nice green background */
     color: #f8f8f2;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
@@ -13,7 +13,7 @@ body {
 
 #root {
     width: 100vw;
-    background-color: #5a3d88; /* A nice purple background */
+    background-color: #00735c; /* A nice green background */
     color: #f8f8f2;
     font-family: 'Courier New', Courier, monospace;
     display: flex;
