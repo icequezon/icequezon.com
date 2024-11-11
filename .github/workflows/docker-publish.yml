@@ -24,7 +24,7 @@ jobs:
       # Step 3: Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/icequezon.com:latest .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/icequezon:latest .
 
       # Step 4: Push the Docker image to Docker Hub
       - name: Push Docker image to Docker Hub
