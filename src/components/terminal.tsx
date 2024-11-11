@@ -1,9 +1,16 @@
 import React from 'react';
 
+interface ContentData {
+  type: string,
+  value: string,
+  display: string
+}
+
 interface Tab {
   name: string,
   url: string,
-  content: string
+  content: string,
+  data: Record<string, ContentData>|null
 }
 
 interface TerminalProps {
@@ -15,6 +22,7 @@ interface TerminalState {
   tabs: Array<Tab>|null,
   activeTab: string|null,
   content: string|null,
+  data: Record<string, ContentData>|null,
 }
 
 export default class Terminal extends React.Component<TerminalProps, TerminalState>{
@@ -22,11 +30,12 @@ export default class Terminal extends React.Component<TerminalProps, TerminalSta
   constructor(props: any){
     super(props);
     const { tabs, activeTab } = props;
-    const { content } = tabs.filter((tab:Tab)=>(tab.name == activeTab))[0];
+    const { content, data } = tabs.filter((tab:Tab)=>(tab.name == activeTab))[0];
     this.state = {
       tabs: tabs,
       activeTab: "",
-      content: content
+      content: content,
+      data: data
     };
   }
 
@@ -53,18 +62,47 @@ export default class Terminal extends React.Component<TerminalProps, TerminalSta
   }
 
   formatContent(content: string|null) {
-    if (!content){
-      return;
-    }
-    const lines = content.split('\n'); // Split the input into lines
-    const maxIndexLength = lines.length.toString().length;
-    return lines
-      .map((line, index) => (
-        <React.Fragment key={index}>
-        {`${(index + 1).toString().padStart(maxIndexLength, ' ')} ${line}`}
+  if (!content) {
+    return null;
+  }
+
+  const data = this.state.data;
+  const lines = content.split('\n'); // Split the input into lines
+  const maxIndexLength = lines.length.toString().length;
+
+  return lines.map((line, index) => {
+    // Split the line by placeholders like {email}, {linkedin}, {github}
+    const parts = line.split(/({\w+})/g);
+
+    return (
+      <React.Fragment key={index}>
+        {/* Render line numbers with padding */}
+        <span style={{ color: 'gray' }}>
+          {`${(index + 1).toString().padStart(maxIndexLength, ' ')} `}
+        </span>
+        
+        {/* Render each part of the line, replacing placeholders with links */}
+        {parts.map((part, partIndex) => {
+          // Check if the part is a placeholder (e.g., {email})
+          const key = part.replace(/[{}]/g, '');
+          if (data && data[key]) {
+            // Render link for placeholder
+            const link = data[key];
+            return (
+              <a key={`${index}-${partIndex}`} href={link.value} target="_blank" rel="noopener noreferrer">
+                {link.display}
+              </a>
+            );
+          }
+          // Render plain text
+          return <span key={`${index}-${partIndex}`}>{part}</span>;
+        })}
+
+        {/* Line break after each line */}
         <br />
-        </React.Fragment>
-      )); // Add line number and <br> tag
+      </React.Fragment>
+    );
+  });
   }
 
   getContentRender() {

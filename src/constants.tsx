@@ -4,10 +4,12 @@ const constants = {
       name: "Home",
       url:  "/",
       content: `
-     **********************************************
-     *  FRANCIS SEBASTIAN J. QUEZON               *
-     *  Python Data Engineer & Developer          *
-     **********************************************
+     ************************************************************
+     *                                                          *
+     *              FRANCIS SEBASTIAN J. QUEZON                 *
+     *            Python Data Engineer & Developer              *
+     *                                                          *
+     ************************************************************
      
      Hello! 👋 I'm Francis Sebastian J. Quezon, a seasoned Python Data Engineer 
      and Software Developer based in Melbourne, Australia. With a strong 
@@ -24,10 +26,12 @@ const constants = {
       name: "About",
       url:  "/about",
       content: `
-     **********************************************
-     *  FRANCIS SEBASTIAN J. QUEZON               *
-     *  Python Data Engineer & Developer          *
-     **********************************************
+     ************************************************************
+     *                                                          *
+     *              FRANCIS SEBASTIAN J. QUEZON                 *
+     *            Python Data Engineer & Developer              *
+     *                                                          *
+     ************************************************************
 
      I’m a software engineer with over four years of experience in data engineering 
      and full-stack development. My expertise includes Python, AWS, Azure, and 
@@ -48,10 +52,12 @@ const constants = {
       name: "Resume",
       url:  "/resume",
       content: `
-     **********************************************
-     *  FRANCIS SEBASTIAN J. QUEZON               *
-     *  Python Data Engineer & Developer          *
-     **********************************************
+     ************************************************************
+     *                                                          *
+     *              FRANCIS SEBASTIAN J. QUEZON                 *
+     *            Python Data Engineer & Developer              *
+     *                                                          *
+     ************************************************************
 
      💼 Python Data Engineer | Complete Development
          - July 2023 - July 2024
@@ -69,7 +75,7 @@ const constants = {
            to high-performance telecom solutions.
      
      For a full view of my work history, skills, and accomplishments, please see 
-     my complete resume here!
+     my LinkedIn Profile!
 
       `
     },
@@ -77,10 +83,12 @@ const constants = {
       name: "Blog",
       url:  "/blog",
       content: `
-     **********************************************
-     *  FRANCIS SEBASTIAN J. QUEZON               *
-     *  Python Data Engineer & Developer          *
-     **********************************************
+     ************************************************************
+     *                                                          *
+     *              FRANCIS SEBASTIAN J. QUEZON                 *
+     *            Python Data Engineer & Developer              *
+     *                                                          *
+     ************************************************************
 
      Welcome to my blog, where I share insights on software development, data 
      engineering, cloud infrastructure, and more. Whether you're a beginner or an 
@@ -95,35 +103,64 @@ const constants = {
       name: "Contact",
       url:  "/contact",
       content: `
-     **********************************************
-     *  FRANCIS SEBASTIAN J. QUEZON               *
-     *  Python Data Engineer & Developer          *
-     **********************************************
+     ************************************************************
+     *                                                          *
+     *              FRANCIS SEBASTIAN J. QUEZON                 *
+     *            Python Data Engineer & Developer              *
+     *                                                          *
+     ************************************************************
 
-     📧 Email: aisukezon@gmail.com
-     📱 Phone: +61478167080
+     📧 Email: {email}
+     🔗 LinkedIn: {linkedin}
+     🔗 GitHub: {github}
      
      I’d love to hear from you! Whether you have a question, want to collaborate, 
      or just want to connect, don’t hesitate to reach out. You can also find me 
      on LinkedIn and GitHub. Looking forward to connecting!
-      `
+      `,
+      data: {
+        email: {
+          type: "link",
+          value: "mailto:aisukezon@gmail.com",
+          display: "aisukezon@gmail.com"
+        },
+        linkedin: {
+          type: "link",
+          value: "https://www.linkedin.com/in/francis-sebastian-quezon-74182a193/",
+          display: "https://www.linkedin.com/in/francis-sebastian-quezon-74182a193/"
+        },
+        github: {
+          type: "link",
+          value: "https://github.com/icequezon",
+          display: "https://github.com/icequezon"
+        },
+      }
     },
     {
       name: "Portfolio",
       url:  "/portfolio",
       content: `
-     **********************************************
-     *  FRANCIS SEBASTIAN J. QUEZON               *
-     *  Python Data Engineer & Developer          *
-     **********************************************
+     ************************************************************
+     *                                                          *
+     *              FRANCIS SEBASTIAN J. QUEZON                 *
+     *            Python Data Engineer & Developer              *
+     *                                                          *
+     ************************************************************
 
      Stay tuned for exciting projects and accomplishments! In the meantime, 
      feel free to explore my work on GitHub to see some of my code, contributions, 
      and ongoing projects.
      
-     🔗 [GitHub Profile](https://github.com/your-github-username)
+     🔗 {github}
 
-      `
+      `,
+      data: {
+        github: {
+          type: "link",
+          value: "https://github.com/icequezon",
+          display: "Github Profile"
+        },
+      }
     },
   ],
 };
