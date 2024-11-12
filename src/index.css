@@ -323,3 +323,7 @@ pre {
     flex-shrink: 0; /* Prevents shrinking */
 }
 
+a {
+  color: #00735c;
+}
+
