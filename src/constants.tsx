@@ -33,18 +33,18 @@ const constants = {
      *                                                          *
      ************************************************************
 
-     I’m a software engineer with over four years of experience in data engineering 
-     and full-stack development. My expertise includes Python, AWS, Azure, and 
-     API design, with a focus on creating high-performance systems. 
+     I’m a software engineer with over 7 years of experience in the tech industry, 
+     focusing on data engineering, full-stack development, and cloud infrastructure. 
+     My expertise includes Python, AWS, Azure, and API design, with a commitment to 
+     creating high-performance and scalable systems.
      
-     After moving to Melbourne, Australia, I’m excited to expand my career and 
-     delve deeper into AI development, an area I’m passionate about. Outside of 
-     work, I love solving complex problems and continuously learning new skills 
-     to stay at the cutting edge of technology.
+     Recently, I relocated to Melbourne, Australia, where I’m excited to continue my 
+     journey, explore new opportunities, and deepen my skills in AI development. 
+     Outside of work, I enjoy solving complex problems, exploring new technologies, 
+     and continuously learning to stay at the cutting edge of the field.
      
-     Thanks for visiting my site — I hope you enjoy learning more about my 
-     work and interests!
-     
+     Thanks for visiting my site — I hope you enjoy learning more about my work and 
+     experiences!
 
       `
     },
