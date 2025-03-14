@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTabs } from '../hooks/useTabs';
+import Tabs from './tabs';
 
 interface ContentData {
   type: string,
@@ -8,8 +10,7 @@ interface ContentData {
 
 interface Tab {
   name: string,
-  url: string,
-  content: string,
+  url: string, content: string,
   data: Record<string, ContentData>|null
 }
 
@@ -129,7 +130,8 @@ export default class Terminal extends React.Component<TerminalProps, TerminalSta
               </div>
               <div className="title">nvim</div>
           </div>
-          { this.getTabsRender() }
+          <Tabs></Tabs> 
+
           { this.getContentRender() }
           <div className="pre-footer">
               <span className="footer-item green">NORMAL</span>
