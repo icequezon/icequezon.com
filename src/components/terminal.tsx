@@ -3,6 +3,7 @@ import { useTabs } from '../hooks/useTabs';
 import Tabs from './tabs';
 
 interface ContentData {
+  key: string,
   type: string,
   value: string,
   display: string
@@ -23,7 +24,7 @@ interface TerminalState {
   tabs: Array<Tab>|null,
   activeTab: string|null,
   content: string|null,
-  data: Record<string, ContentData>|null,
+  data: ContentData[]|null,
 }
 
 export default class Terminal extends React.Component<TerminalProps, TerminalState>{
@@ -86,12 +87,12 @@ export default class Terminal extends React.Component<TerminalProps, TerminalSta
         {parts.map((part, partIndex) => {
           // Check if the part is a placeholder (e.g., {email})
           const key = part.replace(/[{}]/g, '');
-          if (data && data[key]) {
+          const foundItem = data?.find((obj) => obj.key === key);
+          if (foundItem) {
             // Render link for placeholder
-            const link = data[key];
             return (
-              <a key={`${index}-${partIndex}`} href={link.value} target="_blank" rel="noopener noreferrer">
-                {link.display}
+              <a key={`${index}-${partIndex}`} href={foundItem.value} target="_blank" rel="noopener noreferrer">
+                {foundItem.display}
               </a>
             );
           }

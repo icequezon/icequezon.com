@@ -118,23 +118,26 @@ const constants = {
      or just want to connect, don’t hesitate to reach out. You can also find me 
      on LinkedIn and GitHub. Looking forward to connecting!
       `,
-      data: {
-        email: {
+      data: [
+        {
+          key: "email",
           type: "link",
           value: "mailto:aisukezon@gmail.com",
           display: "aisukezon@gmail.com"
         },
-        linkedin: {
+        {
+          key: "linkedin",
           type: "link",
           value: "https://www.linkedin.com/in/francis-sebastian-quezon-74182a193/",
           display: "https://www.linkedin.com/in/francis-sebastian-quezon-74182a193/"
         },
-        github: {
+        {
+          key: "github",
           type: "link",
           value: "https://github.com/icequezon",
           display: "https://github.com/icequezon"
         },
-      }
+      ]
     },
     {
       name: "Portfolio",
