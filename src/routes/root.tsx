@@ -1,9 +1,9 @@
 import React from 'react';
-import Terminal from '../components/terminal';
+import TerminalWrapper from '../components/terminalWrapper';
 
 
-export default function Root({tabs=[{}], activeTab="Home"}) {
+export default function Root({activeTab="Home"}) {
   return (
-    <Terminal tabs={tabs} activeTab={activeTab}/>
+    <TerminalWrapper activeTab={activeTab}/>
   );
 }

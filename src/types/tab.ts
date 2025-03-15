@@ -5,6 +5,14 @@ export interface Meta {
   pagination: Pagination;
 }
 
+export interface TabData {
+  id: number;
+  key: string;
+  type: string;
+  value: string;
+  display: string;
+}
+
 // Type for individual Tab
 export interface Tab {
   id: number;
@@ -15,6 +23,7 @@ export interface Tab {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
+  data: TabData[];
 }
 
 // Type for the full response, including `data` and `meta`

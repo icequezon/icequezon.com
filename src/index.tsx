@@ -12,32 +12,31 @@ import {
 } from "@tanstack/react-query";
 
 import Root from "./routes/root";
-import constants from "./constants";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root tabs={constants.tabs} activeTab="Home"/>
+    element: <Root activeTab="Home"/>
   },
   {
     path: "/about",
-    element: <Root tabs={constants.tabs} activeTab='About'/>
+    element: <Root activeTab='About'/>
   },
   {
     path: "/resume",
-    element: <Root tabs={constants.tabs} activeTab='Resume'/>
+    element: <Root activeTab='Resume'/>
   },
   {
     path: "/blog",
-    element: <Root tabs={constants.tabs} activeTab='Blog'/>
+    element: <Root activeTab='Blog'/>
   },
   {
     path: "/contact",
-    element: <Root tabs={constants.tabs} activeTab='Contact'/>
+    element: <Root activeTab='Contact'/>
   },
   {
     path: "/portfolio",
-    element: <Root tabs={constants.tabs} activeTab='Portfolio'/>
+    element: <Root activeTab='Portfolio'/>
   },
 ]);
 

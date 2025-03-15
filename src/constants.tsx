@@ -157,13 +157,14 @@ const constants = {
      🔗 {github}
 
       `,
-      data: {
-        github: {
+      data: [
+        {
+          key: "github",
           type: "link",
           value: "https://github.com/icequezon",
           display: "Github Profile"
         },
-      }
+      ]
     },
   ],
 };

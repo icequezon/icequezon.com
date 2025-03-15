@@ -1,6 +1,6 @@
 import React from 'react';
-import { useTabs } from '../hooks/useTabs';
 import Tabs from './tabs';
+import {Tab as TabType} from "../types/tab"
 
 interface ContentData {
   key: string,
@@ -9,19 +9,13 @@ interface ContentData {
   display: string
 }
 
-interface Tab {
-  name: string,
-  url: string, content: string,
-  data: Record<string, ContentData>|null
-}
-
 interface TerminalProps {
-  tabs: Array<Tab>|Array<any>,
+  tabs: Array<TabType>|Array<any>,
   activeTab: string|null,
 }
 
 interface TerminalState {
-  tabs: Array<Tab>|null,
+  tabs: Array<TabType>|null,
   activeTab: string|null,
   content: string|null,
   data: ContentData[]|null,
@@ -32,35 +26,13 @@ export default class Terminal extends React.Component<TerminalProps, TerminalSta
   constructor(props: any){
     super(props);
     const { tabs, activeTab } = props;
-    const { content, data } = tabs.filter((tab:Tab)=>(tab.name == activeTab))[0];
+    const { content, data } = tabs.filter((tab:TabType)=>(tab.name == activeTab))[0];
     this.state = {
       tabs: tabs,
       activeTab: "",
       content: content,
       data: data
     };
-  }
-
-  generateTabs(tabs: Array<Tab>| null) {
-    if (!tabs)
-      return;
-
-    return tabs.map((tab:Tab) => (
-      <React.Fragment key={tab.name}>
-        <a href={tab.url}>
-        <span className="nav-item">{tab.name}</span>
-        </a>
-        <span className="nav-item">|</span>
-      </React.Fragment>
-    ));
-  }
-
-  getTabsRender() {
-    return (
-      <div className="nav-bar">
-      { this.generateTabs(this.state.tabs) }
-      </div>
-    );
   }
 
   formatContent(content: string|null) {
@@ -131,7 +103,7 @@ export default class Terminal extends React.Component<TerminalProps, TerminalSta
               </div>
               <div className="title">nvim</div>
           </div>
-          <Tabs></Tabs> 
+          <Tabs tabs={this.state.tabs}></Tabs> 
 
           { this.getContentRender() }
           <div className="pre-footer">

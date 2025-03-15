@@ -1,13 +1,12 @@
 import React from "react";
-import { useTabs } from "../hooks/useTabs"; // Custom hook
 import Tab from "./tab"; // Child component
+import {Tab as TabType} from "../types/tab"
 
-const Tabs = () => {
-  const { data: tabResponse, isLoading, error } = useTabs();
-  const tabs = tabResponse?.data;
+interface TabsProps {
+  tabs: TabType[]|null;
+}
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+const Tabs: React.FC<TabsProps> = ({tabs}) => {
 
   return (
     <div className="nav-bar">
